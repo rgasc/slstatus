@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 5000; /* every 5 sec */
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -64,6 +64,17 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	/* function         format          argument */
+    { cpu_perc,         "CPU: %s%%",    NULL },
+    { separator,        " │ ",          NULL },
+	{ ram_used,         "MEM: %s",      NULL },
+    { separator,        " │ ",          NULL },
+	{ disk_free,        "DSK: %s",      "/home" },
+    { separator,        " │ ",          NULL },
+	{ battery_perc,     "BAT: %s%%",    "BAT0" },
+	{ battery_state,    "%s",          "BAT0" },
+    { separator,        " │ ",          NULL },
+	{ run_command,      "VOL: %s%%",    "pamixer --get-volume" },
+    { separator,        " │ ",          NULL },
+	{ datetime,         "%s",           "%d/%m/%Y %H:%M" },
 };
