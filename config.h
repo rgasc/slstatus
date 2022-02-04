@@ -76,7 +76,7 @@ static const struct arg args[] = {
 	{ battery_perc,     "BAT: %s%%",    "BAT0" },
 	{ battery_state,    "%s",           "BAT0" },
     { separator,        " │ ",          NULL },
-	{ run_command,      "VOL: %s%%",    "pamixer --get-volume" },
+	{ run_command,      "VOL: %s",      "pamixer --get-volume-human" },
     { separator,        " │ ",          NULL },
 	{ datetime,         "%s",           "%d/%m/%Y %H:%M" },
 };
