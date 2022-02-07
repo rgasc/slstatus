@@ -65,6 +65,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function         format          argument */
+    { run_command,      "%s",           "pidof openvpn >/dev/null && echo 'VPN: ON │ ' || echo ' '" },
     { cpu_perc,         "CPU: %s%%",    NULL },
     { separator,        " │ ",          NULL },
 	{ ram_used,         "MEM: %s",      NULL },
